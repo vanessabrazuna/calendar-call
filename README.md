@@ -39,7 +39,7 @@ The project was developed using the following technologies
 - [Nookies](https://www.npmjs.com/package/nookies)
 - [Next Auth](https://next-auth.js.org/)
 - [Eslint](https://eslint.org/)
-- []()
+- [Day.js](https://day.js.org/)
 
 ---
 
