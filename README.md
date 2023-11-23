@@ -41,6 +41,7 @@ The project was developed using the following technologies
 - [Next Auth](https://next-auth.js.org/)
 - [Eslint](https://eslint.org/)
 - [Day.js](https://day.js.org/)
+- [Docker](https://www.docker.com/get-started/)
 
 ---
 
