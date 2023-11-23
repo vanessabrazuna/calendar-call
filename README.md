@@ -36,6 +36,7 @@ The project was developed using the following technologies
 - [Zod](https://zod.dev/)
 - [Prisma](https://www.prisma.io/)
 - [Axios](https://axios-http.com/)
+- [React Query](https://tanstack.com/query/latest)
 - [Nookies](https://www.npmjs.com/package/nookies)
 - [Next Auth](https://next-auth.js.org/)
 - [Eslint](https://eslint.org/)
