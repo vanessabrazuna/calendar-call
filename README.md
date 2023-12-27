@@ -34,14 +34,15 @@ The project was developed using the following technologies
 - [Phosphor React](https://phosphoricons.com/)
 - [React Hook Form](https://react-hook-form.com/)
 - [Zod](https://zod.dev/)
+- [Day.js](https://day.js.org/)
 - [Prisma](https://www.prisma.io/)
 - [Axios](https://axios-http.com/)
 - [React Query](https://tanstack.com/query/latest)
 - [Nookies](https://www.npmjs.com/package/nookies)
 - [Next Auth](https://next-auth.js.org/)
 - [Eslint](https://eslint.org/)
-- [Day.js](https://day.js.org/)
 - [Docker](https://www.docker.com/get-started/)
+- [Next Seo](https://github.com/garmeeh/next-seo)
 
 ---
 
