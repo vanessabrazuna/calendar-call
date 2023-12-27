@@ -4,6 +4,8 @@
     "next/core-web-vitals"
   ],
   "rules": {
-    "camelcase": "off"
+    "camelcase": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-namespace": "off"
   }
 }
