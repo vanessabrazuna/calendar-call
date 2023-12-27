@@ -6,6 +6,7 @@
   "rules": {
     "camelcase": "off",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-namespace": "off"
+    "@typescript-eslint/no-namespace": "off",
+    "prettier/prettier": ["error", {"singleQuote": false}]
   }
 }
