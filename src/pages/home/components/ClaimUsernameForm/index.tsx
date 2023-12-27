@@ -1,11 +1,9 @@
-import { useRouter } from 'next/router'
 import { Button, Text, TextInput } from '@ignite-ui/react'
+import { useRouter } from 'next/router'
 import { ArrowRight } from 'phosphor-react'
-
 import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
-
+import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormAnnotation } from './styles'
 
 const claimUsernameFormSchema = z.object({
@@ -24,14 +22,14 @@ export function ClaimUsernameForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { errors, isSubmitted },
   } = useForm<ClaimUsernameFormData>({
     resolver: zodResolver(claimUsernameFormSchema),
   })
 
   const router = useRouter()
 
-  async function handleClaimUsername(data: ClaimUsernameFormData) {
+  async function handleClaimUsernameForm(data: ClaimUsernameFormData) {
     const { username } = data
 
     await router.push(`/register?username=${username}`)
@@ -39,14 +37,14 @@ export function ClaimUsernameForm() {
 
   return (
     <>
-      <Form as="form" onSubmit={handleSubmit(handleClaimUsername)}>
+      <Form as="form" onSubmit={handleSubmit(handleClaimUsernameForm)}>
         <TextInput
           size="sm"
           prefix="calendar.com/"
-          placeholder="seu-usuário"
+          placeholder="seu-usuario"
           {...register('username')}
         />
-        <Button size="sm" type="submit" disabled={isSubmitting}>
+        <Button size="sm" type="submit" disabled={isSubmitted}>
           Reservar
           <ArrowRight />
         </Button>

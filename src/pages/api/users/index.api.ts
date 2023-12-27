@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { prisma } from '@/lib/prisma'
+import { prisma } from '@/src/lib/prisma'
 import { setCookie } from 'nookies'
 
 export default async function handler(
@@ -19,7 +19,9 @@ export default async function handler(
   })
 
   if (userExists) {
-    return res.status(400).json({ error: 'Username already taken.' })
+    return res.status(400).json({
+      message: 'Username already taken,',
+    })
   }
 
   const user = await prisma.user.create({

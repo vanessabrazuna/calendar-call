@@ -1,10 +1,10 @@
-import '../lib/dayjs'
+import '@/src/lib/dayjs'
 
 import type { AppProps } from 'next/app'
 import { SessionProvider } from 'next-auth/react'
+import { globalStyles } from '../styles/global'
 import { QueryClientProvider } from '@tanstack/react-query'
-import { queryClient } from '@/lib/react-query'
-import { globalStyles } from '@/styles/global'
+import { queryClient } from '../lib/react-query'
 
 globalStyles()
 

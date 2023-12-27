@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import dayjs from 'dayjs'
 import { useQuery } from '@tanstack/react-query'
+import dayjs from 'dayjs'
 import { useRouter } from 'next/router'
-import { api } from '@/lib/axios'
-import { Calendar } from '@/components/Calendar'
+import { useState } from 'react'
+import { Calendar } from '../../../../../components/Calendar'
+import { api } from '../../../../../lib/axios'
 import {
   Container,
   TimePicker,
@@ -30,7 +30,6 @@ export function CalendarStep({ onSelectDateTime }: CalendarStepProps) {
   const username = String(router.query.username)
 
   const weekDay = selectedDate ? dayjs(selectedDate).format('dddd') : null
-
   const describedDate = selectedDate
     ? dayjs(selectedDate).format('DD[ de ]MMMM')
     : null

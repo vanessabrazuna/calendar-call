@@ -1,7 +1,10 @@
+import { useQuery } from '@tanstack/react-query'
 import dayjs from 'dayjs'
-import { useMemo, useState } from 'react'
+import { useRouter } from 'next/router'
 import { CaretLeft, CaretRight } from 'phosphor-react'
-import { getWeekDays } from '@/utils/get-week-days'
+import { useMemo, useState } from 'react'
+import { api } from '../../lib/axios'
+import { getWeekDays } from '../../utils/get-week-days'
 import {
   CalendarActions,
   CalendarBody,
@@ -10,9 +13,6 @@ import {
   CalendarHeader,
   CalendarTitle,
 } from './styles'
-import { api } from '@/lib/axios'
-import { useQuery } from '@tanstack/react-query'
-import { useRouter } from 'next/router'
 
 interface CalendarWeek {
   week: number
@@ -100,23 +100,20 @@ export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
       })
       .reverse()
 
-    const lastDayInCurrenteMonth = currentDate.set(
+    const lastDayInCurrentMonth = currentDate.set(
       'date',
       currentDate.daysInMonth(),
     )
-    const lastWeekDay = lastDayInCurrenteMonth.get('day')
+    const lastWeekDay = lastDayInCurrentMonth.get('day')
 
     const nextMonthFillArray = Array.from({
       length: 7 - (lastWeekDay + 1),
     }).map((_, i) => {
-      return lastDayInCurrenteMonth.add(i + 1, 'day')
+      return lastDayInCurrentMonth.add(i + 1, 'day')
     })
 
     const calendarDays = [
       ...previousMonthFillArray.map((date) => {
-        return { date, disabled: true }
-      }),
-      ...nextMonthFillArray.map((date) => {
         return { date, disabled: true }
       }),
       ...daysInMonthArray.map((date) => {
@@ -127,6 +124,9 @@ export function Calendar({ selectedDate, onDateSelected }: CalendarProps) {
             blockedDates.blockedWeekDays.includes(date.get('day')) ||
             blockedDates.blockedDates.includes(date.get('date')),
         }
+      }),
+      ...nextMonthFillArray.map((date) => {
+        return { date, disabled: true }
       }),
     ]
 

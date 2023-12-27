@@ -14,10 +14,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useSession } from 'next-auth/react'
 import { GetServerSideProps } from 'next'
 import { getServerSession } from 'next-auth'
-import { buildNextAuthOptions } from '@/pages/api/auth/[...nextauth].api'
+import { buildNextAuthOptions } from '@/src/pages/api/auth/[...nextauth].api'
 
 import { useRouter } from 'next/router'
-import { api } from '@/lib/axios'
+import { api } from '@/src/lib/axios'
 
 import { FormAnnotation, ProfileBox } from './styles'
 import { Container, Header } from '../styles'

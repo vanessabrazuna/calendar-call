@@ -1,8 +1,7 @@
 import { Button, Heading, MultiStep, Text } from '@ignite-ui/react'
 import { ArrowRight, Check } from 'phosphor-react'
-import { useRouter } from 'next/router'
 import { signIn, useSession } from 'next-auth/react'
-
+import { useRouter } from 'next/router'
 import { Container, Header } from '../styles'
 import { AuthError, ConnectBox, ConnectItem } from './styles'
 
@@ -61,9 +60,9 @@ export default function ConnectCalendar() {
         )}
 
         <Button
-          onClick={handleNavigateToNextStep}
           type="submit"
           disabled={!isSignedIn}
+          onClick={handleNavigateToNextStep}
         >
           Próximo passo
           <ArrowRight />

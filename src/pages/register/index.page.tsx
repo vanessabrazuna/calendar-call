@@ -1,13 +1,13 @@
 import { useEffect } from 'react'
-import { useRouter } from 'next/router'
 import { Button, Heading, MultiStep, Text, TextInput } from '@ignite-ui/react'
-import { Container, Form, FormError, Header } from './styles'
+import { useRouter } from 'next/router'
 import { ArrowRight } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { api } from '@/lib/axios'
+import { api } from '@/src/lib/axios'
 import { AxiosError } from 'axios'
+import { Container, Form, FormError, Header } from './styles'
 
 const registerFormSchema = z.object({
   username: z
@@ -45,8 +45,8 @@ export default function Register() {
   async function handleRegister(data: RegisterFormData) {
     try {
       await api.post('/users', {
-        username: data.username,
         name: data.name,
+        username: data.username,
       })
 
       await router.push('/register/connect-calendar')
@@ -74,10 +74,10 @@ export default function Register() {
 
       <Form as="form" onSubmit={handleSubmit(handleRegister)}>
         <label>
-          <Text size="sm">Nome de usuário</Text>
+          <Text size="sm">Nome do usuário</Text>
           <TextInput
             prefix="calendar.com/"
-            placeholder="seu-usuário"
+            placeholder="seu-usuario"
             {...register('username')}
           />
 

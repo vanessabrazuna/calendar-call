@@ -7,21 +7,21 @@ import {
   TextInput,
 } from '@ignite-ui/react'
 import { Container, Header } from '../styles'
-import { ArrowRight } from 'phosphor-react'
-import { getWeekDays } from '@/utils/get-week-days'
-import { convertTimeStringToMinutes } from '@/utils/convert-time-string-to-minutes'
-import { Controller, useFieldArray, useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { z } from 'zod'
 import {
-  FormError,
   IntervalBox,
   IntervalDay,
   IntervalInputs,
   IntervalItem,
   IntervalsContainer,
+  FormError,
 } from './styles'
-import { api } from '@/lib/axios'
+import { ArrowRight } from 'phosphor-react'
+import { Controller, useFieldArray, useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { getWeekDays } from '@/src/utils/get-week-days'
+import { convertTimeStringToMinutes } from '@/src/utils/convert-time-string-to-minutes'
+import { api } from '@/src/lib/axios'
 import { useRouter } from 'next/router'
 
 const timeIntervalsFormSchema = z.object({
@@ -71,7 +71,7 @@ export default function TimeIntervals() {
     handleSubmit,
     control,
     watch,
-    formState: { isSubmitting, errors },
+    formState: { errors, isSubmitting },
   } = useForm<TimeIntervalsFormInput>({
     resolver: zodResolver(timeIntervalsFormSchema),
     defaultValues: {
