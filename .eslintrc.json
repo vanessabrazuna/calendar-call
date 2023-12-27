@@ -1,12 +1,12 @@
 {
   "extends": [
     "@rocketseat/eslint-config/react",
-    "next/core-web-vitals"
+    "next/core-web-vitals",
+    "next", "prettier"
   ],
   "rules": {
     "camelcase": "off",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-namespace": "off",
-    "prettier/prettier": ["error", {"singleQuote": false}]
+    "@typescript-eslint/no-namespace": "off"
   }
 }
